@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- 🎬 Lottie Heading Animation -->
+    <div id="heading-animation" class="lottie-container"></div>
+    <h2>Car Price Prediction</h2>
+
+    <form id="prediction-form">
+        <label for="year">Year of Purchase:</label>
+        <input type="number" id="year" required>
+
+        <label for="present_price">Present Price (in lakhs):</label>
+        <input type="number" step="0.01" id="present_price" required>
+
+        <label for="kms_driven">Kilometers Driven:</label>
+        <input type="number" id="kms_driven" required>
+
+        <label for="fuel_type">Fuel Type:</label>
+        <select id="fuel_type">
+            <option value="0">Petrol</option>
+            <option value="1">Diesel</option>
+            <option value="2">CNG</option>
+        </select>
+
+        <label for="seller_type">Seller Type:</label>
+        <select id="seller_type">
+            <option value="0">Dealer</option>
+            <option value="1">Individual</option>
+        </select>
+
+        <label for="transmission">Transmission:</label>
+        <select id="transmission">
+            <option value="0">Manual</option>
+            <option value="1">Automatic</option>
+        </select>
+
+        <label for="owner">Number of Previous Owners:</label>
+        <input type="number" id="owner" required>
+
+        <button type="button" onclick="predictPrice()">Predict Price</button>
+    </form>
+
+    <!-- Loader Animation -->
+    <div id="loader-animation" class="lottie-container" style="display: none;"></div>
+
+    <!-- Result -->
+    <div id="result-container" style="display: none;">
+        <div id="result-animation" class="lottie-container small"></div>
+        <h3 id="prediction-result"></h3>
+    </div>
+
+    <!-- Feedback Section -->
+    <form id="feedback-form">
+        <label for="feedback">Your Feedback:</label>
+        <textarea id="feedback" rows="4" placeholder="Let us know what you think..."></textarea>
+        <button type="button" onclick="submitFeedback()">Submit Feedback</button>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
