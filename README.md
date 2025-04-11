@@ -1,1 +1,3 @@
 # DriveAgain
+
+This Used Car Price Prediction App is a web-based application built using Flask, allowing users to input car details like year, present price, kilometers driven, and fuel type to predict the price of a used car. The app leverages a simple predictive model, offers engaging Lottie animations for a smooth user experience, and includes a feedback form. The frontend is built using HTML, CSS, and JavaScript, while the backend utilizes Python libraries such as Flask, pandas, numpy, scikit-learn, and joblib. The app is easy to set up with a virtual environment and requires dependencies listed in the `requirements.txt` file.
